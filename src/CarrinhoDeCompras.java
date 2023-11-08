@@ -6,10 +6,29 @@ public class CarrinhoDeCompras {
     private double valorTotal;
     private LocalDateTime dataCompra;
 
+
     public CarrinhoDeCompras() {
         ebooks = new ArrayList<>();
         valorTotal = 0.0;
         dataCompra = LocalDateTime.now();
+    }
+    public double getValorTotal() {
+        return valorTotal;
+    }
+
+    // Setter para o atributo valorTotal
+    public void setValorTotal(double valorTotal) {
+        this.valorTotal = valorTotal;
+    }
+
+    // Getter para o atributo dataCompra
+    public LocalDateTime getDataCompra() {
+        return dataCompra;
+    }
+
+    // Setter para o atributo dataCompra
+    public void setDataCompra(LocalDateTime dataCompra) {
+        this.dataCompra = dataCompra;
     }
 
     public void addAoCarrinho(Ebook ebook) {
@@ -24,7 +43,8 @@ public class CarrinhoDeCompras {
         }
     }
 
-    public void realizarPagamento() {
+    public ArrayList<Ebook> realizarPagamento() {
         dataCompra = LocalDateTime.now();
+        return ebooks;
     }
 }
